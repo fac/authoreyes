@@ -5,6 +5,23 @@
 
 _Authoreyes_ (pronounced "authorize") is intended to be a modern, Rails 5 compatible replacement for [Declarative Authorization](https://github.com/stffn/declarative_authorization/).
 
+## Release Process
+
+This is a FreeAgent fork of authoreyes to maintain rails compatibility as upstream has stopped.
+
+This Gem is owned and managed by the Core Services team. Released to [github packages](https://github.com/fac/authoreyes/packages).
+
+Packaging is handled by Jenkins, to push a new release:
+
+* Create a PR that increases the version in `version.rb`
+* Get that reviewed and approved.
+* Merge, on successful build Jenkins will package the gem and release it to github packages.
+* Update the bundles for any applications using this gem.
+
+You can track builds in slack, [#authoreyes-ci](https://freeagent.slack.com/channels/authoreyes-ci). Track releases in [#gem-release](https://freeagent.slack.com/channels/gem-release).
+
+See [Internal Gems](https://www.notion.so/freeagent/Internal-gems) for more detail.
+
 ## Installation
 
 Add this line to your application's Gemfile:
