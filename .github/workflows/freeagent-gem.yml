@@ -5,27 +5,13 @@ name: FreeAgent Gem
 on:
   push:
     branches: [main, master]
-  pull_request:
 
 jobs:
-  # Install the bundle and run the gems test suite.
-  tests:
-    runs-on: ubuntu-latest
+  # Note: no tests, tested via inclusion in the main app
 
-    steps:
-    - uses: actions/checkout@v2
-    - uses: ruby/setup-ruby@v1 # .ruby-version
-      with:
-        bundler-cache: true # bundle install
-
-    - name: Test
-      run: bundle exec rake
-
-  # Builds that pass testing above, will trigger a build and push of the new
-  # gem version to the registry. If the version.rb has not been bumped since
-  # the last release, the push will no-op.
+  # Trigger a build and push of the new gem version to the registry. If the
+  # version.rb has not been bumped since the last release, the push will no-op.
   release:
-    needs:   tests
     runs-on: ubuntu-latest
 
     steps:
